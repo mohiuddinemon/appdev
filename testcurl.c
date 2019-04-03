@@ -18,9 +18,9 @@ int main( int argc, char **argv)
 	c = curl_easy_init();
 	if(c) 
 	{
-	curl_easy_setopt(c, CURLOPT_URL, "http://www.cc.puv.fi/~e1700687/curl.php");
-	curl_easy_setopt(c, CURLOPT_POSTFIELDS, poststr);
-	res = curl_easy_perform(c);
+		curl_easy_setopt(c, CURLOPT_URL, "http://www.cc.puv.fi/~e1700687/curl.php");
+		curl_easy_setopt(c, CURLOPT_POSTFIELDS, poststr);
+		res = curl_easy_perform(c);
 	if(res != CURLE_OK)
 		printf("Communication is not OK\n");
 	else
