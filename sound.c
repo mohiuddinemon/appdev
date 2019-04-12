@@ -5,15 +5,15 @@
 
 // this function gets in an array of decibel values and finds out the number of peaks in this array
 int findPeaks(int d[])
-	{
+{
 	int i, c=0;
 	for(i=1; i<80; i++)
-		{
+	{
 		if(d[i]>=75 && d[i-1]<75) c++;
-		}
+	}
 	if(d[0]>=75) c++;
 	return c;
-	}
+}
 
 // this function takes 1 second of samples (16000 in our  case) and calculate 80 pieces of  RMS value,
 // and then turn this values into decibels, and display them as a barchart
@@ -46,7 +46,7 @@ void displayWAVDATA(short s[])
 	int peaks = findPeaks(db);		// get the number of peaks
 	setColors(WHITE, bg(BLACK));		// set the colors
 	printf("\033[1;41H");			// go to row 1, col 41
-	printf("Peaks: %d	   \n", peaks);
+	printf("Peaks:              \n", peaks);
 #endif
 }
 
@@ -78,13 +78,13 @@ void displayWAVHDR(struct WAVHDR h)
 #else
 	setColors(RED, bg(BLUE));
 	printf("\033[1;1H");
-	printf("test.wav	\n");
+	printf("test.wav            \n");
 	setColors(YELLOW, bg(GREEN));
-	printf("033[1;21H");
-	printf("Sample rate=%d	\n", h.SampleRate);
+	printf("\033[1;21H");
+	printf("Sample rate=%d      \n", h.SampleRate);
 	setColors(WHITE, bg(MAGNETA));
 	printf("\033[1;61H");
-	printf("Duration=%.2f	\n", (float)h.Subchunk2Size/h.ByteRate);
+	printf("Duration=%.2f       \n", (float)h.Subchunk2Size/h.ByteRate);
 #endif 
 
 	// to be continued for the other flds
