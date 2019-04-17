@@ -1,1 +1,21 @@
 # this is the first version
+This project is to turn a Raspberry PI as an Audio device. The device is able to do 2 functions: as a sound collcetor and as a test-generator.
+
+Table of content
+	1.Configuration Instructions
+	2.Installation Instructions
+	3.Operating Instructions
+	4.File list(Manifest)
+	5.Copyright / Copyleft
+	6.Contact Information
+	7.Credits and Acknowledgments
+
+1.Configuration Instructions
+
+The application is running on a Raspberry Pi 3 model B. This pi should come with a USB sound card, a network connection, a microphone.
+
+1.1 Configure USB sound card as default audio device
+
+....
+
+1.2 Install Libcurl library
