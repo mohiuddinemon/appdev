@@ -46,7 +46,7 @@ void displayWAVDATA(short s[])
 	int peaks = findPeaks(db);		// get the number of peaks
 	setColors(WHITE, bg(BLACK));		// set the colors
 	printf("\033[1;41H");			// go to row 1, col 41
-	printf("Peaks:              \n", peaks);
+	printf("Peaks:%d            \n", peaks);
 #endif
 }
 
