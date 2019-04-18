@@ -1,4 +1,4 @@
-# this is the first version
+# This is the first version
 This project is to turn a Raspberry PI as an Audio device. The device is able to do 2 functions: as a sound collcetor and as a test-generator.
 
 Table of content
@@ -11,11 +11,94 @@ Table of content
 	7.Credits and Acknowledgments
 
 1.Configuration Instructions
+ 
+Equipment
+•	Raspberry PI
+•	External USB sound card 
+•	Microphone, 3.5 mm headphone jack plug (further: mic)
+•	RJ45 Cable 
+•	Power supply cable
+•	Main operating computer ( PUTTY )
+Set Up
+Check whether Curl library is already installed on the RPi by running the following command:
+	
+	~$ ls /usr/include/curl
+	If it is not, install it by running the following commands:
 
-The application is running on a Raspberry Pi 3 model B. This pi should come with a USB sound card, a network connection, a microphone.
+	~$ sudo apt-get update
+	~$ sudo apt-get install libcurl3
+	~$ sudo apt-get install libcurl4-openssl-dev
 
-1.1 Configure USB sound card as default audio device
 
-....
+	To install alsamixer:
+	~$ sudo nano /etc/apt/sources.list
+	Add the following line at the end of sources.list:
+	
+	Run:
 
-1.2 Install Libcurl library
+	~$ sudo apt-get update
+	~$ sudo apt-get install alsa-utils=1.0.25-4
+	Reboot (if necessary).
+
+	To test the sound quality:
+	
+	Run:
+
+	~$ arecord -r44100 -c1 -f S16_LE -d5 test.wav
+	Connect dynamic to the sound card. 
+and to play ,Run:
+
+	~$ aplay test.wav
+
+
+	2.Installation Instructions
+
+The installation of the program requires a screen and a HDMI cable connected to the screen. 
+
+First we need to run Linux system and then change the default configuration by entering some codes. Afterwards, only raspberry Pi and Ethernet cable should be connected to computer. Then the installation is completed.
+
+3.Operating Instructions
+
+The user simply runs putty and enter IP address that is sent to user's computer(If the email is not sent, the user may check the information on the website www.cc.puv.fi/~gc/php/rasp.php). Then open appdev file which contains the source code. After that, operate application by typing "./sound.a"(remember to change the Remote Character Set as UTF-8). It should shows many vertical bars on the screen. 
+
+
+4.File list(Manifest)
+
+•	comm.c
+•	main.c
+•	README
+•	screen.h
+•	sound.h
+•	testcurl.c
+•	comm.h
+•	makefile
+•	screen.c
+•	sound.c
+•	sound.php
+
+5.Copyright / Copyleft
+
+I have done this project with the help of my teacher Mr Gao Chao.
+
+Also, This project is licensed under the GNU General Public License. You should have received a copy of the GNU General Public License along with this program.  If not look into the following link. 
+
+<https://www.gnu.org/licenses/>.
+
+6.Contact Information
+
+Name: Md Mohiuddin Emon
+Email: e1700687@edu.vamk.fi
+
+
+Dept. of Information Technology
+Vaasa University of Applied Sciences
+Woffintie 30, 65100, Vaasa, Finland
+
+
+7.Credits and Acknowledgments
+
+Author: Md Mohiuddin Emon 
+Initial work: mohiuddinemon(GitHub profile)
+Used resources: Wikimedia Foundation Inc., Wikipedia - Encyclopedia materials - wikipedia.org
+Used code: curl/curl.h - Data transmission from the RPi to the server - curl.haxx.se
+
